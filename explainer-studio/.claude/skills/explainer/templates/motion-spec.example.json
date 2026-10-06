@@ -1,0 +1,35 @@
+{
+  "project": "acme-books",
+  "fps": 30,
+  "defaults": {
+    "easing": "spring",
+    "spring": { "damping": 200, "stiffness": 120 },
+    "enterDuration": 0.5,
+    "stagger": 0.08
+  },
+  "scenes": [
+    {
+      "id": "scene-03",
+      "label": "Solution — dashboard reveal",
+      "source": "rebuild",
+      "figmaFrame": "Dashboard / Overview",
+      "camera": [
+        { "at": 0.0, "scale": 1.15, "x": 0, "y": 40 },
+        { "at": 1.2, "scale": 1.0, "x": 0, "y": 0, "easing": "easeOutCubic" }
+      ],
+      "elements": [
+        { "target": "sidebar", "anim": "slideInLeft", "at": 0.4 },
+        { "target": "kpi-cards", "anim": "fadeUp", "at": 0.6, "stagger": 0.1 },
+        { "target": "kpi-revenue.value", "anim": "countUp", "from": 0, "to": 1200000, "format": "$0.0a", "at": 0.9, "duration": 1.2 },
+        { "target": "reconcile-table.row-3", "anim": "highlight", "color": "accent", "at": 2.4 }
+      ],
+      "overlay": { "text": "Reconciled automatically", "at": 2.6, "position": "bottom-left" },
+      "sfx": [ { "file": "pop.mp3", "at": 2.4 } ],
+      "portrait": {
+        "crop": "center-left",
+        "hide": ["sidebar"],
+        "scale": 1.35
+      }
+    }
+  ]
+}
